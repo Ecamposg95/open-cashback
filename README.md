@@ -162,6 +162,7 @@ docker compose up -d db
 cd backend
 python -m pip install -r requirements.txt
 alembic upgrade head
+python scripts/seed_demo.py
 uvicorn app.main:app --reload
 ```
 
@@ -175,6 +176,15 @@ OpenAPI:
 
 ```text
 http://localhost:8000/docs
+```
+
+## Demo credentials
+
+```text
+Merchant admin: admin@demo.open-cashback.local
+Password: demo1234
+Organization ID: 11111111-1111-1111-1111-111111111111
+Customer ID: 33333333-3333-3333-3333-333333333333
 ```
 
 ## Comandos utiles

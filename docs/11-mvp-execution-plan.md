@@ -105,3 +105,26 @@ Merchant opens dashboard
 6. Add backend seed script for demo data.
 7. Add missing list endpoints for sales and redemptions.
 8. Implement auth/me and demo users.
+
+
+## Current progress
+
+Implemented in this iteration:
+
+- Demo seed script with stable organization, branch, customer and merchant admin IDs.
+- Basic bearer auth `/api/v1/auth/me`.
+- Sales list endpoint.
+- Redemptions list endpoint.
+- Frontend API client with demo fallback.
+- Customer Portal connected to wallet and ledger endpoints.
+- Merchant Dashboard connected to reports, customers and ledger endpoints.
+- POS simulator can submit demo sales to `POST /api/v1/sales` when backend is running.
+
+Demo command:
+
+```bash
+cd backend
+alembic upgrade head
+python scripts/seed_demo.py
+uvicorn app.main:app --reload
+```

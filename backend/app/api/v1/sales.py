@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.core.database import get_db
+from app.models.sale import Sale
 from app.schemas.sale import SaleCashbackResponse, SaleCreate, SaleRead
 from app.services.sale_service import SaleService
 
@@ -12,6 +13,16 @@ router = APIRouter(prefix="/sales", tags=["sales"])
 def create_sale(payload: SaleCreate, db: Session = Depends(get_db)):
     sale, rate, amount, tx = SaleService(db).create(payload)
     return {"sale": sale, "cashback_rate": rate, "cashback_amount": amount, "transaction": tx}
+
+
+@router.get("", response_model=list[SaleRead])
+def list_sales(organization_id: str, db: Session = Depends(get_db)):
+    return (
+        db.query(Sale)
+        .filter(Sale.organization_id == organization_id)
+        .order_by(Sale.created_at.desc())
+        .all()
+    )
 
 
 @router.get("/{sale_id}", response_model=SaleRead)

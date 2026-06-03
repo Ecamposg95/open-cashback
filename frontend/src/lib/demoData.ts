@@ -1,14 +1,18 @@
-export type LedgerType = "EARNED" | "REDEEMED" | "REVERSED" | "BONUS";
+export type LedgerType = "EARNED" | "REDEEMED" | "REVERSED" | "BONUS" | "EXPIRED" | "ADJUSTED";
+
+export const DEMO_ORG_ID = "11111111-1111-1111-1111-111111111111";
+export const DEMO_BRANCH_ID = "22222222-2222-2222-2222-222222222222";
+export const DEMO_CUSTOMER_ID = "33333333-3333-3333-3333-333333333333";
 
 export const demoOrganization = {
-  id: "demo-org",
+  id: DEMO_ORG_ID,
   name: "Demo Merchant",
   cashbackRate: 0.01,
   currency: "MXN",
 };
 
 export const demoCustomer = {
-  id: "demo-customer",
+  id: DEMO_CUSTOMER_ID,
   firstName: "Emmanuel",
   lastName: "Campos",
   email: "cliente@example.com",
@@ -80,7 +84,7 @@ export const demoTransactions = [
 ];
 
 export const demoCustomers = [
-  { id: "cust_001", name: "Emmanuel Campos", email: "cliente@example.com", balance: 245, status: "ACTIVE" },
+  { id: DEMO_CUSTOMER_ID, name: "Emmanuel Campos", email: "cliente@example.com", balance: 245, status: "ACTIVE" },
   { id: "cust_002", name: "Ana Lopez", email: "ana@example.com", balance: 120, status: "ACTIVE" },
   { id: "cust_003", name: "Carlos Ruiz", email: "carlos@example.com", balance: 0, status: "ACTIVE" },
   { id: "cust_004", name: "Maria Torres", email: "maria@example.com", balance: 510, status: "ACTIVE" },

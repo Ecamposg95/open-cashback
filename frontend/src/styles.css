@@ -101,6 +101,29 @@ button, input { font: inherit; }
   color: #657789;
 }
 
+.source-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 850;
+  border: 1px solid #cfd8e3;
+  background: #ffffff;
+  color: #405466;
+}
+.source-pill.api {
+  border-color: #9be3d5;
+  background: #e7f7f4;
+  color: #087565;
+}
+.source-pill.demo {
+  border-color: #fed7aa;
+  background: #fff7ed;
+  color: #b45309;
+}
+
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
