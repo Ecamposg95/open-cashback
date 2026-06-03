@@ -24,3 +24,23 @@
 - Add API key manager UI and backend router.
 - Add demo seed script.
 - Add real auth route guards for `/portal` and `/app`.
+
+
+## Next sprint - MVP secure demo
+
+Priority order:
+
+1. Merchant login UI and frontend route guards.
+2. Protect merchant endpoints with bearer auth and tenant context.
+3. Add persistent `Idempotency-Key` model/service for `POST /sales`.
+4. Add API key CRUD and scopes for LaaS integrations.
+5. Add redemption intent / QR-code lifecycle.
+6. Improve dashboard loading/error states for public demo.
+
+Acceptance criteria:
+
+- Merchant demo user can login and call `/auth/me`.
+- POS simulator can safely retry sale registration without duplicate ledger entries.
+- Merchant can create an API key for integration usage.
+- Customer can create a short-lived redemption code.
+- Merchant can confirm redemption code and create a `REDEEMED` ledger movement.

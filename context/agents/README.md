@@ -8,9 +8,10 @@ Before editing code, every agent should read:
 2. `context/agents/mvp-collaboration-brief.md`
 3. `context/product/ui-mvp-spec.md`
 4. `context/technical/mvp-implementation-plan.md`
-5. `docs/02-architecture.md`
-6. `docs/04-data-model.md`
-7. `docs/10-backlog.md`
+5. `context/technical/next-development-plan.md`
+6. `docs/02-architecture.md`
+7. `docs/04-data-model.md`
+8. `docs/10-backlog.md`
 
 ## Project principle
 

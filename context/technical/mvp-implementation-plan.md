@@ -219,13 +219,21 @@ Implement:
 
 ## Immediate implementation priorities
 
+Completed:
+
 1. Frontend app shell and routing.
 2. Demo seed script.
 3. Customer dashboard with mock/API adapter.
 4. Merchant dashboard with mock/API adapter.
 5. Auth/me endpoint and demo users.
-6. Redemption intent model.
-7. API key model endpoints.
+
+Next:
+
+1. Merchant login UI and route guards.
+2. Tenant context from authenticated user/API key.
+3. Persistent idempotency for POS flows.
+4. API key model endpoints and scopes.
+5. Redemption intent model and QR/code UI.
 
 ## Technical risks
 
@@ -265,3 +273,8 @@ The backend can support a demo now, but a secure MVP must prioritize:
 7. Tests for RBAC, idempotency, QR lifecycle and concurrency.
 
 These items are tracked in `context/technical/backend-mvp-gap-analysis.md`.
+
+
+## Next plan document
+
+Detailed next-step execution plan: `context/technical/next-development-plan.md`.

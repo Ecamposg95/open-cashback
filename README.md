@@ -255,6 +255,7 @@ Open Cashback mantiene enfoque Web3 sin hacer lenta la operacion del POS.
 - [Collaborative Agent Context](context/agents/README.md)
 - [UI MVP Spec](context/product/ui-mvp-spec.md)
 - [Backend MVP Gap Analysis](context/technical/backend-mvp-gap-analysis.md)
+- [Next Development Plan](context/technical/next-development-plan.md)
 
 ## Roadmap
 

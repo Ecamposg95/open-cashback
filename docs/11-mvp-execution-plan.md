@@ -128,3 +128,16 @@ alembic upgrade head
 python scripts/seed_demo.py
 uvicorn app.main:app --reload
 ```
+
+
+## Next development focus
+
+The next sprint should move the project from demo-connected to MVP-secure:
+
+1. Merchant login UI and token storage.
+2. Tenant context from authenticated user/API key.
+3. Persistent idempotency for sales and redemptions.
+4. API keys with scopes for POS/ERP/e-commerce.
+5. Redemption intent / QR-code flow.
+
+Detailed plan: `context/technical/next-development-plan.md`.
