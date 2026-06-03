@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16
+    container_name: open_cashback_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: open_cashback
+    ports:
+      - "5432:5432"
+    volumes:
+      - open_cashback_pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: open_cashback_backend
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app
+
+volumes:
+  open_cashback_pgdata:

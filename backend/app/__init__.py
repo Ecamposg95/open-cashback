@@ -1,0 +1,1 @@
+"""Open Cashback backend application."""
