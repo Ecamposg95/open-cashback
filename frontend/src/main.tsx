@@ -1,21 +1,24 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { Wallet, ReceiptText, ShieldCheck } from "lucide-react";
+import { CustomerPortal } from "./features/customer/CustomerPortal";
+import { MerchantDashboard } from "./features/merchant/MerchantDashboard";
 import "./styles.css";
 
-function App() {
-  return (
-    <main className="shell">
-      <section className="panel">
-        <div className="brand"><Wallet size={28} /> Open Cashback</div>
-        <h1>Cashback, wallet y ledger auditable para POS/ERP.</h1>
-        <div className="grid">
-          <div><ReceiptText /> Ledger interno PostgreSQL primero.</div>
-          <div><ShieldCheck /> Hashes y anchoring Web3 preparado.</div>
-        </div>
-      </section>
-    </main>
-  );
+function resolveRoute() {
+  const path = window.location.pathname;
+
+  if (path.includes("/portal/") && path.endsWith("/transactions")) return <CustomerPortal page="transactions" />;
+  if (path.includes("/portal/") && path.endsWith("/redeem")) return <CustomerPortal page="redeem" />;
+  if (path.includes("/portal/") && path.endsWith("/web3")) return <CustomerPortal page="web3" />;
+  if (path.startsWith("/portal")) return <CustomerPortal page="dashboard" />;
+
+  if (path.includes("/customers")) return <MerchantDashboard page="customers" />;
+  if (path.includes("/sales/new")) return <MerchantDashboard page="sales" />;
+  if (path.includes("/transactions")) return <MerchantDashboard page="ledger" />;
+  if (path.includes("/campaigns")) return <MerchantDashboard page="campaigns" />;
+  if (path.includes("/blockchain")) return <MerchantDashboard page="blockchain" />;
+  if (path.includes("/settings")) return <MerchantDashboard page="settings" />;
+  return <MerchantDashboard page="dashboard" />;
 }
 
-createRoot(document.getElementById("root")!).render(<App />);
+createRoot(document.getElementById("root")!).render(<React.StrictMode>{resolveRoute()}</React.StrictMode>);

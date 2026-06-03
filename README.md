@@ -241,6 +241,10 @@ Open Cashback mantiene enfoque Web3 sin hacer lenta la operacion del POS.
 - [Security](docs/08-security.md)
 - [Token Economy](docs/09-token-economy.md)
 - [Backlog](docs/10-backlog.md)
+- [MVP Execution Plan](docs/11-mvp-execution-plan.md)
+- [Collaborative Agent Context](context/agents/README.md)
+- [UI MVP Spec](context/product/ui-mvp-spec.md)
+- [Backend MVP Gap Analysis](context/technical/backend-mvp-gap-analysis.md)
 
 ## Roadmap
 
@@ -260,8 +264,8 @@ Open Cashback mantiene enfoque Web3 sin hacer lenta la operacion del POS.
 ```text
 MVP Core Ledger: en desarrollo inicial.
 Backend core: scaffold funcional.
+Frontend: customer portal y merchant LaaS shell iniciados.
 Blockchain: placeholder y contrato minimo.
-Frontend: base inicial.
 Produccion: no listo todavia.
 ```
 
